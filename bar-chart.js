@@ -25,7 +25,7 @@ var barChart = {
     y: { field: "b", type: "quantitative", title: "Values" },
   },
   title: "Bar Chart",
-  width: 600,
+  width: "container",
   height: 300,
 };
 
