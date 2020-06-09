@@ -22,7 +22,14 @@ var barChart = {
       axis: { labelAngle: 0 },
       title: "Letters",
     },
-    y: { field: "b", type: "quantitative", title: "Values" },
+    y: {
+      field: "b",
+      type: "quantitative",
+      title: "Values",
+      scale: {
+        domain: [0, 100],
+      },
+    },
   },
   title: "Bar Chart",
   width: "container",
@@ -31,12 +38,33 @@ var barChart = {
 
 vegaEmbed("#bar-chart", barChart);
 
-document.getElementById("btnRandomize").addEventListener("click", (event) => {
-  data = data.map((d) => {
-    d.b = Math.ceil(Math.random() * 100);
-    return d;
-  });
+document.querySelector(".chartButtons").addEventListener("click", (e) => {
+  if (e.target.id === "btnUniform") {
+    data = data.map((d) => {
+      d.b = generateUniform();
+      return d;
+    });
+  }
+  if (e.target.id === "btnNormal") {
+    data = data.map((d) => {
+      d.b = generateNormal();
+      return d;
+    });
+  }
 
   barChart.data.values = data;
   vegaEmbed("#bar-chart", barChart);
 });
+
+function generateUniform() {
+  return Math.ceil(Math.random() * 100);
+}
+
+function generateNormal() {
+  var sample = new Array(5);
+  for (let i = 0; i < sample.length; i++) {
+    sample[i] = Math.random();
+  }
+  const mean = (sample.reduce((a, b) => a + b) / sample.length) * 100;
+  return mean;
+}
