@@ -32,8 +32,8 @@ var barChart = {
     },
   },
   title: "Bar Chart",
+  height: 250,
   width: "container",
-  height: 300,
 };
 
 vegaEmbed("#bar-chart", barChart);

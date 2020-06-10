@@ -9,27 +9,27 @@ header {
   z-index: 10;
   background-color: #fff;
   box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.2);
-  padding: 1em;
+  padding: 0 1em;
 }
 
-.header-container {
+.title-container {
   display: flex;
   align-items: center;
   height: 100%;
-  margin: 0 5% 0 15%;
-}
-
-h1 {
-  margin: 0;
-  justify-content: center;
+  margin: 0 auto 0;
+  width: 90%;
+  max-width: 600px;
 }
 
 .main-container {
-  width: 70%;
-  margin: 5% auto 0px;
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto 0;
+  font-size: large;
+  line-height: 1.5;
 }
 
 #bar-chart {
   width: 100%;
-  max-width: 600px;
+  max-width: 560px;
 }
