@@ -34,7 +34,16 @@ header {
   max-width: 560px;
 }
 
-#fert-ticks {
-  /* width: 100%;
-  max-width: 412px; */
+.slidecontainer {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+#slideOutput {
+  text-align: center;
+}
+
+#fig6 {
+  height: 401px;
 }

@@ -74,8 +74,9 @@
           First, a couple of notes about the visualization. To better
           distinguish the countries the markers have been changed to circles.
           Countries that are not the United States and China are now grey and
-          set to a very low opacity so they appear faint in the figure, unless
-          many are overlapping.
+          set to a very low opacity so they appear faint in the figure. The
+          United States and China are given their own colors, drawn with no
+          transperancy, and the size of the cirlces have been increased.
         </p>
         <p>
           We might ask what the distribution of life expectancy was in 1955. How
@@ -85,30 +86,56 @@
         <p>
           We can see there was a huge disparity is life expectacy in 1955. Many
           countries had a life expectancy under 50 years old. China's life
-          expectancy was just over 50 years. Tremendous progress has been made.
-          The Unted States, which started at the upper end of the spectrum with
-          a life expectacy around 69 years in 1955 saw its life expectacy
-          increase to over 78 years by 2005.
+          expectancy was just over 50 years. The Unted States, which started at
+          the upper end of the spectrum with a life expectacy around 69 years in
+          1955 saw its life expectacy increase to over 78 years by 2005.
         </p>
-      </article>
-      <article>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
-        tenetur nobis unde sed mollitia earum. Iste eveniet, dicta accusantium
-        voluptate, quasi consequuntur ex ea et ducimus, eligendi fuga dolores
-        quam? In, architecto sunt! Rem necessitatibus consectetur nam neque
-        dolores natus asperiores explicabo facilis eos mollitia cum ut,
-        voluptatem doloribus architecto fugit molestiae repudiandae harum
-        distinctio impedit quidem voluptates est officia. Dolore quo mollitia
-        tempore et doloremque, esse eligendi excepturi culpa sequi debitis
-        inventore, quaerat ratione ducimus perferendis corporis numquam? Placeat
-        voluptatum nam natus soluta ducimus saepe quo blanditiis, dolor vero.
-        Nesciunt ipsum nihil consequuntur nobis dignissimos id eius, veritatis
-        vitae dolores architecto, quasi tempora labore at sed vero consectetur
-        ex distinctio cumque. Velit optio aspernatur suscipit dolor eos hic
-        natus? Dignissimos labore accusamus, iste sit deleniti consequuntur
-        vitae molestiae illo eos neque quas omnis est nulla totam fugit repellat
-        cum consectetur iusto odio voluptatum non! Doloribus aliquam quod porro
-        hic!
+        <p>
+          Let's now get a more detailed view of how life expectacy has changed
+          over time. We're going to switch to encoding the years of life
+          expectancy for a country on the y-axis and time along the x-axis. We
+          will also draw lines connecting the points over time. Please note,
+          because the United States appears vertically higher in the chart we
+          will flip the order of our countries in the color scheme so the United
+          States appears on top in the legend. We will also do this in the
+          charts that follow.
+        </p>
+        <div id="fig4"></div>
+        <p>
+          This is a slope graph. It is probably harder to get a sense of the
+          overall distribution of life expetancy across countries, but we can
+          now easily see the trends over time in the United States and China,
+          and easily compare the two countries over time.
+        </p>
+        <p>
+          Now let's include all years in the dataset and smooth the lines using
+          a monotone interpolation.
+        </p>
+        <div id="fig5"></div>
+        <p>
+          Of course, we can't leave without reproducing the classic
+          visualization from this dataset.
+        </p>
+        <div id="fig6"></div>
+        <div class="slidecontainer">
+          <label for="slideYear">Select Year:</label>
+          <input
+            id="slideYear"
+            type="range"
+            min="1955"
+            max="2005"
+            step="5"
+            value="1955"
+            class="slider"
+          />
+          <div id="slideOutput">1955</div>
+        </div>
+        <p>
+          This is where we start preferring D3 to Vega-Lite. The above graphic
+          is completely redrawn when the user moves the range slider. D3 would
+          allow us to only redraw the parts of the chart that need to be
+          updated.
+        </p>
       </article>
     </div>
     <script src="./bar-chart.js"></script>
