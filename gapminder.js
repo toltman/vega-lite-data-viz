@@ -184,7 +184,12 @@ const fig6 = {
       axis: { tickCount: 10 },
       scale: { domain: [0, 9] },
     },
-    y: { field: "life_expect", type: "quantitative", title: "Life Expectancy" },
+    y: {
+      field: "life_expect",
+      type: "quantitative",
+      title: "Life Expectancy",
+      scale: { domain: [0, 90] },
+    },
     color: {
       field: "cluster",
       type: "nominal",
@@ -197,6 +202,7 @@ const fig6 = {
       title: "Population",
       scale: {
         range: [0, 2000],
+        domain: [0, 1200000000],
       },
     },
     tooltip: [
@@ -206,7 +212,7 @@ const fig6 = {
     ],
     order: { field: "pop", type: "quantitative", sort: "descending" },
   },
-  title: "Fertility and Life Expectancy, 1955",
+  title: "Fertility and Life Expectancy",
   width: 460,
   height: 300,
 };
