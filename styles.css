@@ -29,11 +29,6 @@ header {
   line-height: 1.5;
 }
 
-#bar-chart {
-  width: 100%;
-  max-width: 560px;
-}
-
 .slidecontainer {
   display: flex;
   flex-direction: column;
